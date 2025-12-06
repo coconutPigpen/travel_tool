@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡 10 日遊行程工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🇯🇵 福岡 10 日遊</h1>
+        <p>2025/12/11 - 12/20 | 點擊項目即可完成打勾</p>
+    </header>
+
+    <div class="itinerary-container">
+
+        <section class="day-card" id="day-1">
+            <h2>📅 Day 1 - 12/11 (四) 抵達</h2>
+            <ul class="task-list">
+                <li onclick="toggleDone(this)">11:55 前抵達 **一航** (TPE)</li>
+                <li onclick="toggleDone(this)">抵達福岡機場，取車</li>
+                <li onclick="toggleDone(this)">Check-in 住宿: <a href="https://www.booking.com/Share-lLXG2N7938" target="_blank">Booking 連結</a></li>
+            </ul>
+        </section>
+
+        <section class="day-card" id="day-3">
+            <h2>📅 Day 3 - 12/13 (六) 柳川・熊本</h2>
+            <div class="note">交通方式：**開車自駕**</div>
+            <ul class="task-list">
+                <li onclick="toggleDone(this)">午餐：**柳川鰻魚飯**</li>
+                <li onclick="toggleDone(this)">景點：參觀 **熊本城**</li>
+                <li onclick="toggleDone(this)">晚餐：**豬排飯**</li>
+                <li onclick="toggleDone(this)">Check-in 住宿: <a href="https://www.booking.com/Share-6GsmzZ" target="_blank">Booking 連結</a></li>
+            </ul>
+        </section>
+
+        <section class="day-card" id="day-4">
+            <h2>📅 Day 4 - 12/14 (日) 阿蘇山</h2>
+            <ul class="task-list">
+                <li onclick="toggleDone(this)">景點：**阿蘇中岳火山口**</li>
+                <li onclick="toggleDone(this)">景點：**草千里騎馬**</li>
+                <li onclick="toggleDone(this)">午餐：**赤牛丼**</li>
+                <li onclick="toggleDone(this)">景點：**阿蘇卡德利動物樂園**</li>
+                <li onclick="toggleDone(this)">**17:30** Check-in 住宿: **久邸** (212,256 ¥)</li>
+            </ul>
+        </section>
+        
+        <section class="day-card" id="day-6">
+            <h2>📅 Day 6 - 12/16 (二) 別府・湯布院</h2>
+            <ul class="task-list">
+                <li onclick="toggleDone(this)">景點：**別府地獄** 巡禮</li>
+                <li onclick="toggleDone(this)">景點：**九重 夢大橋**</li>
+                <li onclick="toggleDone(this)">景點：**金鱗湖** (傍晚)</li>
+                <li onclick="toggleDone(this)">Check-in 住宿: **朝霧のみえる宿 ゆふいん花** (51,625 ¥)</li>
+            </ul>
+        </section>
+
+        <section class="day-card" id="day-9">
+            <h2>📅 Day 9 - 12/19 (五) 返程福岡</h2>
+            <div class="note">今天**還車**，回市區</div>
+            <ul class="task-list">
+                <li onclick="toggleDone(this)">完成 **還車** 手續</li>
+                <li onclick="toggleDone(this)">前往 **福岡北邊** 地區</li>
+                <li onclick="toggleDone(this)">Check-in 住宿: **福岡博多車站東方飯店** ($7,696)</li>
+            </ul>
+        </section>
+
+        <section class="day-card budget-section">
+            <h2>💰 預算總結 (手動填寫)</h2>
+            <p>旅行總計：¥ ___ | 住宿：¥ ___ | 餐飲：¥ ___</p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
