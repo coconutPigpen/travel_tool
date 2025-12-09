@@ -1,52 +1,81 @@
+/* -------------------------------------- */
+/* 基礎設定 */
+/* -------------------------------------- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+    background-color: #f5f5f5; /* 柔和米白色背景 */
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
+/* -------------------------------------- */
+/* 標頭與整體佈局 */
+/* -------------------------------------- */
 header {
-    background-color: #2c3e50;
+    background-color: #34495e; /* 深藍色標頭 */
     color: white;
-    padding: 20px 15px;
+    padding: 25px 15px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
     font-size: 1.8em;
+    letter-spacing: 2px;
 }
 
 header p {
-    margin-top: 5px;
+    margin-top: 8px;
     font-size: 0.9em;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .itinerary-container {
     padding: 15px;
+    display: grid;
+    /* 在手機上是單欄顯示 */
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
+/* -------------------------------------- */
+/* 日期卡片樣式 */
+/* -------------------------------------- */
 .day-card {
     background-color: white;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #3498db; /* 藍色側邊條強調 */
+    border-radius: 10px;
+    padding: 18px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd; /* 淺灰色邊框，增加質感 */
 }
 
 .day-card h2 {
-    color: #3498db;
-    font-size: 1.3em;
+    color: #2980b9; /* 清爽的日系藍色 */
+    font-size: 1.25em;
     margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
+/* 備註/提醒 區塊 */
+.note {
+    background-color: #eaf3f8; /* 極淺藍色背景 */
+    color: #2980b9;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-size: 0.9em;
+    border-left: 3px solid #2980b9;
+}
+
+/* -------------------------------------- */
+/* 任務清單與互動 */
+/* -------------------------------------- */
 .task-list {
     list-style: none;
     padding: 0;
@@ -54,50 +83,61 @@ header p {
 }
 
 .task-list li {
-    padding: 12px 10px;
-    border-bottom: 1px solid #eee;
+    padding: 12px 0;
     cursor: pointer;
     position: relative;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
     font-size: 1.05em;
     display: flex;
     align-items: center;
+    border-bottom: 1px dashed #eee; /* 虛線分隔 */
 }
 
 .task-list li:last-child {
     border-bottom: none;
 }
 
+.task-list a {
+    color: #2c3e50; /* 連結顏色 */
+    text-decoration: underline;
+}
+
 /* 點擊完成的樣式 */
 .task-list li.done {
     text-decoration: line-through;
-    color: #95a5a6;
-    background-color: #ecf0f1;
-}
-
-.task-list li.done::before {
-    content: '✅'; /* 用打勾符號替代表頭 */
-    margin-right: 10px;
-    font-size: 1.1em;
+    color: #b0c4de; /* 柔和的淺灰色 */
+    background-color: transparent;
 }
 
 .task-list li:not(.done)::before {
     content: '⬜'; /* 待辦方塊 */
-    margin-right: 10px;
+    margin-right: 12px;
     font-size: 1.1em;
 }
 
-.note {
-    background-color: #fcf8e3;
-    color: #8a6d3b;
-    padding: 8px 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
+.task-list li.done::before {
+    content: '☑️'; /* 完成打勾符號 */
+    margin-right: 12px;
+    font-size: 1.1em;
 }
 
+/* -------------------------------------- */
+/* 預算區塊 */
+/* -------------------------------------- */
 .budget-section {
-    border-left: 5px solid #e74c3c;
+    border-left: 5px solid #e67e22; /* 橙色強調 */
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
+    padding: 20px 15px;
+}
+.budget-section h2 {
+    color: #e67e22;
+}
+
+/* 媒體查詢：平板及以上尺寸 */
+@media (min-width: 768px) {
+    .itinerary-container {
+        /* 在大螢幕上顯示兩欄 */
+        grid-template-columns: 1fr 1fr; 
+    }
 }
