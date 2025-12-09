@@ -1,76 +1,78 @@
 /* -------------------------------------- */
-/* 基礎設定 */
+/* 基礎設定 - 文青基調：柔和灰、高留白 */
 /* -------------------------------------- */
 body {
     font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
-    background-color: #f5f5f5; /* 柔和米白色背景 */
+    background-color: #fcfcfc; /* 接近純白的背景，增加留白感 */
     margin: 0;
     padding: 0;
-    color: #333;
-    line-height: 1.6;
+    color: #4a4a4a; /* 深藍灰文字 */
+    line-height: 1.7; /* 增加行距，更舒適閱讀 */
 }
 
 /* -------------------------------------- */
-/* 標頭與整體佈局 */
+/* 標頭 - 簡潔、低調 */
 /* -------------------------------------- */
 header {
-    background-color: #34495e; /* 深藍色標頭 */
-    color: white;
-    padding: 25px 15px;
+    background-color: #ffffff; /* 白色標頭 */
+    color: #34495e; /* 深藍灰文字 */
+    padding: 30px 15px 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 極柔和陰影 */
+    border-bottom: 1px solid #e9e9e9; /* 淺分隔線 */
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
-    letter-spacing: 2px;
+    font-size: 1.6em;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
 
 header p {
-    margin-top: 8px;
-    font-size: 0.9em;
-    opacity: 0.9;
+    margin-top: 5px;
+    font-size: 0.85em;
+    color: #7f8c8d; /* 淺灰次要文字 */
+    opacity: 1;
 }
 
 .itinerary-container {
-    padding: 15px;
+    padding: 20px 15px; /* 增加邊距留白 */
     display: grid;
-    /* 在手機上是單欄顯示 */
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
 }
 
 /* -------------------------------------- */
-/* 日期卡片樣式 */
+/* 日期卡片 - 簡約邊框，移除強烈陰影 */
 /* -------------------------------------- */
 .day-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 18px 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border: 1px solid #ddd; /* 淺灰色邊框，增加質感 */
+    background-color: #ffffff;
+    border-radius: 4px; /* 偏直角邊角 */
+    padding: 20px;
+    box-shadow: none; /* 移除陰影 */
+    border: 1px solid #e5e5e5; /* 淺灰色細邊框，突出內容 */
 }
 
 .day-card h2 {
-    color: #2980b9; /* 清爽的日系藍色 */
-    font-size: 1.25em;
+    color: #34495e; /* 使用深藍灰作為主題色 */
+    font-size: 1.2em;
     margin-top: 0;
-    border-bottom: 2px solid #ecf0f1;
+    border-bottom: 1px dashed #dcdcdc; /* 虛線分隔，文青感 */
     padding-bottom: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
-/* 備註/提醒 區塊 */
+/* 備註/提醒 區塊 - 低飽和度 */
 .note {
-    background-color: #eaf3f8; /* 極淺藍色背景 */
-    color: #2980b9;
-    padding: 8px 10px;
-    border-radius: 5px;
-    margin-bottom: 12px;
+    background-color: #f7f9fa; /* 極淺藍灰背景 */
+    color: #5d788c; /* 柔和的提示文字顏色 */
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
     font-size: 0.9em;
-    border-left: 3px solid #2980b9;
+    border-left: 3px solid #95a5a6; /* 柔和的淺灰色邊條 */
 }
 
 /* -------------------------------------- */
@@ -87,10 +89,10 @@ header p {
     cursor: pointer;
     position: relative;
     transition: all 0.2s;
-    font-size: 1.05em;
+    font-size: 1em;
     display: flex;
-    align-items: center;
-    border-bottom: 1px dashed #eee; /* 虛線分隔 */
+    align-items: flex-start; /* 讓內容對齊頂部 */
+    border-bottom: 1px dotted #e0e0e0; /* 點狀分隔線 */
 }
 
 .task-list li:last-child {
@@ -98,7 +100,7 @@ header p {
 }
 
 .task-list a {
-    color: #2c3e50; /* 連結顏色 */
+    color: #34495e; /* 連結顏色 */
     text-decoration: underline;
 }
 
@@ -109,35 +111,8 @@ header p {
     background-color: transparent;
 }
 
+/* 待辦方塊與完成符號 */
 .task-list li:not(.done)::before {
-    content: '⬜'; /* 待辦方塊 */
+    content: '▢'; /* 簡潔的方塊 */
     margin-right: 12px;
-    font-size: 1.1em;
-}
-
-.task-list li.done::before {
-    content: '☑️'; /* 完成打勾符號 */
-    margin-right: 12px;
-    font-size: 1.1em;
-}
-
-/* -------------------------------------- */
-/* 預算區塊 */
-/* -------------------------------------- */
-.budget-section {
-    border-left: 5px solid #e67e22; /* 橙色強調 */
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px 15px;
-}
-.budget-section h2 {
-    color: #e67e22;
-}
-
-/* 媒體查詢：平板及以上尺寸 */
-@media (min-width: 768px) {
-    .itinerary-container {
-        /* 在大螢幕上顯示兩欄 */
-        grid-template-columns: 1fr 1fr; 
-    }
-}
+    font-
